@@ -1,5 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class MapRunner {
 
@@ -12,13 +12,30 @@ public class MapRunner {
         punga.put(kinder.getName(), kinder);
         punga.put(raffaelo.getName(), raffaelo);
 
-        System.out.println(punga);
+       // List<List<Bomboana>> bobobo = new ArrayList<>();
 
-        Bomboana crocobazurururur = punga.get("crocobazurururur");
-        System.out.println(crocobazurururur);
-        boolean kinder1 = punga.containsKey("Kinder");
-        System.out.println("case sensitive :" + kinder1);
+        /*for (Entry<String, Bomboana> entry: entries) {
+            System.out.println("key :" + entry.getKey());
+            System.out.println("value :" + entry.getValue());
+            if(entry.getKey().equals("kinder")){
+                punga.remove(entry.getKey());
+            }
+        }
+        System.out.println(punga);*/
 
+        Set<Entry<String, Bomboana>> entries = punga.entrySet();
+
+        Iterator<Entry<String, Bomboana>> iterator = entries.iterator();
+
+        while(iterator.hasNext()){
+            Entry<String, Bomboana> next = iterator.next();
+            System.out.println(next.getKey());
+            System.out.println(next.getValue());
+            if(next.getKey().equals("kinder")){
+                iterator.remove();
+            }
+        }
+        System.out.println(entries);
 
     }
 }
