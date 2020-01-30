@@ -1,0 +1,6 @@
+ford,focus
+ford,ranger
+dacia,sandero
+pagani,huayra
+mazda,mx5
+caruta,cuBoi
